@@ -1,0 +1,186 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macron Industries — Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-teko { font-family: 'Teko', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Premium custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0D1E27; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(164,113,72,0.5); }
+        
+        /* Video Background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        /* Hero Content Animation - starts when .animated class is added */
+        .animate-hero {
+            opacity: 0;
+        }
+        
+        body.animated .animate-hero {
+            animation: heroFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: var(--delay, 0s);
+        }
+        
+        @keyframes heroFadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#0D1E27] text-white font-inter relative w-full selection:bg-[#A47148]/30 selection:text-white">
+
+    <!-- Video Background -->
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="https://res.cloudinary.com/dm2hjn5wp/video/upload/q_auto/f_auto/v1776169641/lv_0_20260414175509_lbetrl.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark Overlay -->
+    <div class="fixed inset-0 bg-[#0D1E27]/70 z-0"></div>
+
+    <!-- Preloader Overlay -->
+    <div id="preloader" class="fixed inset-0 z-50 bg-[#0D1E27] flex flex-col items-center justify-center transition-transform duration-[800ms] ease-[cubic-bezier(0.8,0,0.2,1)]">
+        <div id="preload-logo" class="opacity-0 transition-opacity duration-500">
+            <img src="https://res.cloudinary.com/dm2hjn5wp/image/upload/q_auto/f_auto/v1776170445/Macron_Industries_Vertical_Color_Logo_PNG_jb36wy.png" alt="Macron Industries" class="h-36 md:h-44 w-auto">
+        </div>
+        <div class="h-[1px] w-48 bg-white/5 mt-8 rounded-full overflow-hidden">
+            <div id="preload-progress" class="h-full bg-gradient-to-r from-[#A47148] to-[#D4A373] w-0 transition-all duration-[1500ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header-logo" class="absolute top-0 left-0 w-full px-6 lg:px-12 py-8 z-20 opacity-0 transition-all duration-1000" style="transition-delay: 100ms;">
+        <div class="flex items-center">
+            <img src="https://res.cloudinary.com/dm2hjn5wp/image/upload/q_auto/f_auto/v1776170445/Macron_Industries_Vertical_Color_Logo_PNG_jb36wy.png" alt="Macron Industries" class="h-20 md:h-28 w-auto">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 w-full min-h-screen flex items-center justify-center pt-24 pb-32">
+        <div class="w-full max-w-4xl mx-auto px-6 text-center">
+            
+            <!-- Brand Name -->
+            <div class="mb-6" id="hero-content">
+                <h2 class="font-teko text-2xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-[0.3em] text-white/90 animate-hero" style="--delay: 0.1s;">
+                    MACRON
+                </h2>
+                <p class="font-teko text-xs md:text-sm uppercase tracking-[0.5em] text-white/50 mt-1 animate-hero" style="--delay: 0.2s;">
+                    INDUSTRIES
+                </p>
+            </div>
+            
+            <!-- Main Tagline -->
+            <div class="mb-6" id="main-tagline">
+                <h1 class="font-teko text-4xl md:text-6xl lg:text-7xl font-semibold uppercase tracking-tight leading-[0.9] text-white">
+                    <span class="block animate-hero" style="--delay: 0.35s;">Something Powerful</span>
+                    <span class="block text-[#D4A373] animate-hero" style="--delay: 0.45s;">Is Rising</span>
+                </h1>
+            </div>
+            
+            <!-- Divider Line -->
+            <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#A47148] to-transparent mx-auto mb-6 animate-hero" id="divider" style="--delay: 0.6s;"></div>
+            
+            <!-- Bottom Tagline -->
+            <div class="animate-hero flex justify-center" id="bottom-tagline" style="--delay: 0.75s;">
+                <p class="font-teko text-sm md:text-base uppercase tracking-[0.25em] text-white/50 flex items-center gap-4">
+                    <span>Precision Built</span>
+                    <span class="w-1 h-1 bg-[#A47148] rounded-full"></span>
+                    <span>Performance Driven</span>
+                </p>
+            </div>
+            
+            <!-- Launch Date -->
+            <div class="mt-6 animate-hero" id="launch-date" style="--delay: 0.9s;">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
+                    <iconify-icon icon="mdi:calendar" width="16" height="16" style="color: #A47148;"></iconify-icon>
+                    <span class="font-teko text-sm uppercase tracking-widest text-white/70">Launching May 2026</span>
+                </span>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 w-full bg-[#081217] border-t border-white/5 pt-16 pb-8 text-center">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            
+            <div class="mb-6">
+                <span class="font-teko font-medium tracking-tighter text-2xl md:text-3xl text-white/90">MACRON</span>
+                <span class="font-teko font-light text-2xl md:text-3xl text-white/50 tracking-tighter"> INDUSTRIES</span>
+            </div>
+            
+            <p class="font-teko text-sm md:text-base text-white/40 uppercase tracking-[0.25em] mb-6">Precision Built <span class="mx-2 text-white/20">|</span> Performance Driven</p>
+            
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-8">
+                <a href="tel:+919913480458" class="text-sm text-white/40 tracking-wide font-inter hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    <iconify-icon icon="mdi:phone" width="14"></iconify-icon>
+                    +91 99134 80458
+                </a>
+                <a href="mailto:info@macronindustries.com" class="text-sm text-white/40 tracking-wide font-inter hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    <iconify-icon icon="mdi:email-outline" width="14"></iconify-icon>
+                    info@macronindustries.com
+                </a>
+            </div>
+            
+            <p class="text-xs text-white/30 font-inter mb-8">Behind Gateway Plaza, Ahmedabad Hwy, Palanpur - 385001</p>
+            
+            <a href="https://wa.me/919913480458" target="_blank" class="inline-flex items-center justify-center gap-2 text-xs font-light tracking-wide text-[#A47148] bg-[#A47148]/10 hover:bg-[#A47148]/20 px-4 py-2 rounded-full transition-colors duration-300 mb-8 border border-[#A47148]/20">
+                <iconify-icon icon="solar:phone-calling-linear" width="16"></iconify-icon>
+                Contact via WhatsApp
+            </a>
+            
+            <div class="w-full border-t border-white/5 pt-8 mt-auto">
+                <p class="text-[10px] text-white/20 font-inter tracking-wider uppercase">© 2026 Macron Industries. All rights reserved.</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            const logo = document.getElementById('preload-logo');
+            const progress = document.getElementById('preload-progress');
+            const headerLogo = document.getElementById('header-logo');
+            
+            requestAnimationFrame(() => {
+                setTimeout(() => logo.classList.remove('opacity-0'), 100);
+                setTimeout(() => progress.style.width = '100%', 350);
+
+                setTimeout(() => {
+                    preloader.style.transform = 'translateY(-100%)';
+                    headerLogo.classList.remove('opacity-0');
+                    document.body.classList.add('animated');
+                    
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 800);
+                    
+                }, 1850);
+            });
+        });
+    </script>
+
+</body></html>

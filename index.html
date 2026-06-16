@@ -3983,6 +3983,7 @@
 
             const name = sanitize(document.getElementById('name').value);
             const phone = sanitize(document.getElementById('phone').value);
+            const message = sanitize(document.getElementById('message').value);
 
             if (!name || name.length < 2) {
                 btn.textContent = 'Enter valid name';
@@ -3990,8 +3991,14 @@
                 setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 2500);
                 return;
             }
-            if (!/^[\+\d\s\-\(\)]{7,15}$/.test(phone)) {
+            if (!/^[\+\d\s\-\(\)]{7,20}$/.test(phone)) {
                 btn.textContent = 'Enter valid phone';
+                btn.style.background = '#c0392b';
+                setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 2500);
+                return;
+            }
+            if (!message || message.length < 5) {
+                btn.textContent = 'Enter your message';
                 btn.style.background = '#c0392b';
                 setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 2500);
                 return;
@@ -4002,10 +4009,10 @@
                 company: sanitize(document.getElementById('company').value),
                 phone: phone,
                 city: sanitize(document.getElementById('city').value),
-                message: sanitize(document.getElementById('message').value)
+                message: message
             };
 
-            fetch('https://script.google.com/macros/s/AKfycbyzAbuMFIEXqQ15gULA7uwn099JqZDeqXXvp-R0kzjReEwErUKOoERTn0PrLsG4-Pk5bQ/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyHLKUf_e36cKQgnibnyxlO0m8-0Z9pHBjnzQ0Ex67J3xW5j45Q0FvGS56mizapMMIoFg/exec', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },

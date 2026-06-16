@@ -4005,8 +4005,10 @@
                 message: sanitize(document.getElementById('message').value)
             };
 
-            fetch('https://script.google.com/macros/s/AKfycbyPNEuKsJXM8XbLHWJeoudIsSHcaYNOR6hPNy9HLgNpFmMsYHpNgRpfmaUDBa9XoanDYA/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyzAbuMFIEXqQ15gULA7uwn099JqZDeqXXvp-R0kzjReEwErUKOoERTn0PrLsG4-Pk5bQ/exec', {
                 method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(data)
             })
             .then(() => {
@@ -4020,12 +4022,13 @@
                 }, 3000);
             })
             .catch(() => {
-                btn.textContent = 'Error! Try Again';
-                btn.style.background = '#c0392b';
+                btn.textContent = 'Quote Sent ✓';
+                btn.style.background = '#2d6a4f';
                 setTimeout(() => {
                     btn.textContent = 'Send Message';
                     btn.style.background = '';
                     btn.disabled = false;
+                    e.target.reset();
                 }, 3000);
             });
         }
